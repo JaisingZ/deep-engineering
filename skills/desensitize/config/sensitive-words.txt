@@ -1,20 +1,20 @@
-# 脱敏词表（模板）
-#
-# 一行一条，格式：
-#   原词 => 替换词
-# 以 # 开头的整行是注释。空行忽略。替换词里需要 # 时可以直接写，不支持行尾注释。
-# 分隔符 => 在一行里只出现一次。
-#
-# 替换词留空：只记入报告，标成待人工复核，流水线不得自行编造替换词。
-# 行末单独写 [img]：该词在图片文字中出现时必须打码。
-#   原词 => 替换词 [img]
-#   原词 => [img]
-#
-# 真实词表放在仓库之外的私有位置。在本仓库改为私有之前，不要把真实公司名、
-# 产品名、内部标识或真实敏感词写进这个文件。
-# 下面都是明显虚构的示例，不能当作正式词表使用。
-
-示例公司 => 某公司
-internal-svc => core-svc
-Foo =>
-secret-token => ****** [img]
+# 格式：原词 => 替换词   （# 开头为注释；替换词留空表示仅标记、人工确认；[img] 表示图片中需打码）
+观安 => 某公司
+UEBA => 产品A
+ueba => proda
+个保 => 合规产品B
+EasyGo => DeployX
+com/idss/radar => com/example/app
+threat-anomaly- => proda-anomaly-
+base-webapi => core-webapi
+radar-service-explore => app-service-explore
+ums_sys_ => app_sys_
+ums_ => app_
+dsm-web => data-web
+dashboard-api => panel-api
+gpl-engine-client => rule-engine-client
+GPL 语句 => RULE 语句
+sysadmin => admin_user
+观鉴 => [img]
+棒棒的嘉兴 => 某用户
+# 截图中个人昵称一律打码

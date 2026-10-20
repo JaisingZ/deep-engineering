@@ -1,6 +1,6 @@
 # deep-engineering
 
-> **这个仓库应当设为私有。** `articles/<目录>/article.md` 保存的是脱敏之前的原文，里面可以有公司、产品、内网地址、账号和截图里的个人信息。脱敏报告也会逐条抄录命中的原文。在仓库改为私有之前，不要提交真实文章、真实脱敏词表，或任何带原文片段的报告。
+> **这个仓库应当保持私有。** `articles/<目录>/article.md` 保存的是脱敏之前的原文，里面可以有公司、产品、内网地址、账号和截图里的个人信息。脱敏报告也会逐条抄录命中的原文。正式词表是 `skills/desensitize/config/sensitive-words.txt`。
 
 这里存放作者关于软件工程的中文原文，主题包括 AI Native 开发与知识工程。每篇文章是一条流水线的输入：发现新增或更新，脱敏，按 X 长文的阅读方式润色，准备封面，保存为 X Articles 草稿，校验，然后通知作者。
 
@@ -61,11 +61,8 @@
 | `x/article.x.md` 或 `x/article.x.partN.md` | 润色 |
 | `x/cover-prompt.md` | 封面 |
 
-## 公开期间不要提交的东西
+## 不要提交的东西
 
-- 真实文章，以及文章里的截图原件
-- 正式脱敏词表。模板在 `skills/desensitize/config/sensitive-words.txt`，里面只有虚构示例
-- `x/desensitize-report.md` 这类会抄录原文的报告
 - 密钥、令牌、`.env`
 
 `docs/` 的用途见 [docs/README.md](docs/README.md)。那里只能出现已经脱敏的成品，不能用来放原文。
