@@ -1,0 +1,9 @@
+.cover-text {
+  position: absolute; left: 90px; top: 0; bottom: 0; width: 700px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.eyebrow { font-family: "Noto Sans", "Noto Sans CJK SC", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 1px; color: var(--text); margin-bottom: 14px; }
+.title { font-weight: 700; font-size: 52px; line-height: 1.32; color: var(--text); }
+.title .ln { display: block; white-space: nowrap; }
+.rule { width: 96px; height: 4px; border-radius: 2px; background: var(--cyan); margin: 28px 0 22px; box-shadow: 0 0 10px rgba(86,190,255,.6); }
+.subtitle { font-size: 26px; color: var(--muted); white-space: nowrap; }
