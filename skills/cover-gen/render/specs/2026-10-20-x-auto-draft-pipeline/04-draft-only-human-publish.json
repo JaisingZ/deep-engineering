@@ -1,0 +1,14 @@
+{
+  "type": "boundary",
+  "output": "pic/04-draft-only-human-publish.png",
+  "title": "只建草稿，发布由人来",
+  "subtitle": "让 Agent 做可撤回的事，把不可撤回的事留给人",
+  "wall": "不可撤回",
+  "left": {"name": "流水线 / 调度助手", "tag": "可撤回",
+           "items": ["脱敏、润色完成", "封面与图片就绪", {"text": "创建 X 草稿 → 草稿箱", "class": "draft"}, "校验并通知作者"]},
+  "right": {"name": "人", "tag": "最终判断",
+            "items": ["看草稿", "判断语气与时机", "决定发不发"],
+            "button": "发布"},
+  "footer": "流水线绝不自动发布：准备工作做到 99%，最后 1% 的判断不让渡",
+  "seed": 6
+}

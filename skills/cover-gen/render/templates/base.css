@@ -1,0 +1,29 @@
+/* Shared palette — follows skills/cover-gen/config/style-prompt.md */
+:root {
+  --bg: #010920;
+  --bg2: #000c26;
+  --panel: #0a1838;
+  --panel2: #0d1f47;
+  --line: #1f3566;
+  --cyan: #56beff;
+  --cyan-hi: #a9efff;
+  --blue: #2a8cb9;
+  --amber: #c6a48b;
+  --amber-d: #a36d42;
+  --text: #f2f6fc;
+  --muted: #bec8d7;
+  --dim: #7f8dab;
+  --red: #ff7a7a;
+  --green: #7be0b0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: var(--w); height: var(--h); overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans CJK SC", "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.canvas { position: relative; width: var(--w); height: var(--h); overflow: hidden; }
+.bgsvg { position: absolute; inset: 0; z-index: 0; }
+.content { position: relative; z-index: 1; }
