@@ -1,6 +1,6 @@
 # 润色
 
-把脱敏后的正文改成可以保存为 X Articles 草稿的长文。规则全文在 [config/polish-rules.md](../../config/polish-rules.md)。这里只规定操作顺序和输出位置。
+把脱敏后的正文改成可以保存为 X Articles 草稿的长文。规则全文在 [skills/polish/config/polish-rules.md](config/polish-rules.md)。这里只规定操作顺序和输出位置。
 
 输入是脱敏步骤交出的正文，加上打码后的图片副本。不要直接拿 `article.md` 送去润色。脱敏复扫未通过时，不做这一步。
 
@@ -46,4 +46,4 @@
 
 不要在润色稿里加入作者真名、内部链接或未脱敏的图片路径。不要把 `docs/` 当作这一步的输出目录。
 
-写完后对照 `config/polish-rules.md` 再看一遍：层级、列表、表格、附件标记、代码块长度、图片数量和分篇衔接句。确认无误再交给封面步骤。
+写完后对照 `skills/polish/config/polish-rules.md` 再看一遍：层级、列表、表格、附件标记、代码块长度、图片数量和分篇衔接句。确认无误再交给封面步骤。

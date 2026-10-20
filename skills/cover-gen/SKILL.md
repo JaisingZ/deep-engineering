@@ -2,7 +2,7 @@
 
 为文章准备一张 1500×600 的封面。图片文件若要生成，在仓库外完成。这一步在仓库里只做选择，并写出 `x/cover-prompt.md`。
 
-风格说明在 [config/style-prompt.md](../../config/style-prompt.md)：深海军蓝底，左侧白字标题和短青线，右侧青蓝到琥珀金的细线波浪。
+风格说明在 [skills/cover-gen/config/style-prompt.md](config/style-prompt.md)：深海军蓝底，左侧白字标题和短青线，右侧青蓝到琥珀金的细线波浪。
 
 ## 先看有没有现成封面
 
@@ -19,7 +19,7 @@
 
 ## 没有 cover.png 时
 
-根据润色稿的标题、副标题和文章主题，加上 `config/style-prompt.md`，写出一份可以交给外部图像工具的提示。主题只用文章里已经出现的概念，不添加新的事实。
+根据润色稿的标题、副标题和文章主题，加上 `skills/cover-gen/config/style-prompt.md`，写出一份可以交给外部图像工具的提示。主题只用文章里已经出现的概念，不添加新的事实。
 
 `x/cover-prompt.md` 使用下面的结构：
 
