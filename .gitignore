@@ -1,0 +1,30 @@
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.bak
+
+# 密钥、环境变量与令牌
+*.secret
+.env
+.env.*
+*.token
+*.tokens
+token.json
+tokens.json
+credentials.json
+credentials.*.json
+secrets/
+
+# 正式脱敏词表放在仓库外。若误放在下面这个路径，不要提交。
+config/sensitive-words.local.txt
