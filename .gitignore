@@ -26,5 +26,5 @@ credentials.json
 credentials.*.json
 secrets/
 
-# 正式脱敏词表放在仓库外。若误放在下面这个路径，不要提交。
+# 不忽略正式词表 sensitive-words.txt。只忽略误放在旁边的本地副本。
 skills/desensitize/config/sensitive-words.local.txt
