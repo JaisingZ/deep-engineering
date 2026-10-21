@@ -2,7 +2,7 @@
 
 > **这个仓库应当保持私有。** `articles/<目录>/article.md` 保存的是脱敏之前的原文，里面可以有公司、产品、内网地址、账号和截图里的个人信息。脱敏报告也会逐条抄录命中的原文。正式词表是 `skills/desensitize/config/sensitive-words.txt`。
 
-这里存放作者关于软件工程的中文原文，主题包括 AI Native 开发与知识工程。每篇文章是一条流水线的输入：发现新增或更新，脱敏，按 X 长文的阅读方式润色，准备封面，保存为 X Articles 草稿，校验，然后通知作者。
+这里存放作者关于软件工程的中文原文，主题包括 AI Native 开发与知识工程。每篇文章是一条流水线的输入：发现新增或更新，脱敏，按 X 长文的阅读方式润色并套用活人感，准备封面，保存为 X Articles 草稿，校验，然后通知作者。
 
 **草稿只保存，不自动发布。** 作者核对草稿后再亲手发布。
 
@@ -17,13 +17,18 @@
 │   ├── README.md
 │   └── _template/            空模板，不是一篇文章
 ├── docs/                     可选。仅用于将来的 GitHub Pages，只能放脱敏后的成品
-└── skills/                   脱敏、润色、封面。配置放在各自的 config/ 下
+└── skills/                   脱敏、润色、活人感、封面。配置放在各自的 config/ 下
     ├── desensitize/
     │   ├── SKILL.md
     │   └── config/sensitive-words.txt
     ├── polish/
     │   ├── SKILL.md
     │   └── config/polish-rules.md
+    ├── human-voice/
+    │   ├── SKILL.md
+    │   ├── config/style-rules.md
+    │   ├── references/style-analysis.md
+    │   └── scripts/lint.py
     └── cover-gen/
         ├── SKILL.md
         └── config/style-prompt.md
@@ -47,10 +52,10 @@
 
 1. **发现。** 找出 `articles/YYYY-MM-DD-短标题/article.md`。忽略 `_template`。目录里还没有 `x/`，或者 `article.md`、配图比 `x/` 里的产物更新，就当作待处理。
 2. **脱敏。** 按 [skills/desensitize/SKILL.md](skills/desensitize/SKILL.md) 扫描正文、代码块、文件名和图片里的文字。原图不改，打码写到副本。通过标准是对脱敏后的材料复扫，命中数为 0。报告写到 `x/desensitize-report.md`。
-3. **润色。** 按 [skills/polish/SKILL.md](skills/polish/SKILL.md) 和 [skills/polish/config/polish-rules.md](skills/polish/config/polish-rules.md)，把脱敏后的正文改成 X 长文。不改变技术内容。结果是 `x/article.x.md`；需要分篇时是 `x/article.x.partN.md`。
+3. **润色。** 按 [skills/polish/SKILL.md](skills/polish/SKILL.md) 和 [skills/polish/config/polish-rules.md](skills/polish/config/polish-rules.md) 改版式，并按 [skills/human-voice/SKILL.md](skills/human-voice/SKILL.md) 改成工程师本人的口吻。表达冲突时以活人感为准。不改变技术内容，不新增原文没有的事实。结果是 `x/article.x.md`；需要分篇时是 `x/article.x.partN.md`。
 4. **封面。** 按 [skills/cover-gen/SKILL.md](skills/cover-gen/SKILL.md) 写 `x/cover-prompt.md`。目录里已有 `cover.png` 就沿用，并在提示里注明。没有则根据润色稿和 [skills/cover-gen/config/style-prompt.md](skills/cover-gen/config/style-prompt.md) 写生图提示。图在仓库外生成。
 5. **草稿。** 把润色稿存成 X Articles 草稿。只创建或更新草稿，不发布。
-6. **校验。** 核对脱敏复扫、标题层级、列表、篇幅、图片数量、代码块长度、分篇衔接和封面。草稿的状态必须是未发布。
+6. **校验。** 核对脱敏复扫、标题层级、列表、篇幅、图片数量、代码块长度、分篇衔接、封面，以及活人感：加粗不超过 5 处、没有 emoji、段落不超过 120 个汉字、没有「首先 / 综上所述」一类模板连接词。可以用 `python3 skills/human-voice/scripts/lint.py` 扫润色稿。草稿的状态必须是未发布。
 7. **通知。** 把草稿位置、报告路径和「需要作者亲手发布」告诉作者。通知不是发布。
 
 `article.md` 始终保持为脱敏前原文，流水线不覆盖它。生成文件放在该文目录的 `x/`：
