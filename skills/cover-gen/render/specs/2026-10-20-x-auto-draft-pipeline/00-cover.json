@@ -1,8 +1,0 @@
-{
-  "type": "cover",
-  "output": "cover.png",
-  "eyebrow": "Article → X Draft",
-  "title": ["写完就有草稿：", "“文章 → X 草稿”自动流水线"],
-  "subtitle": "脱敏、润色、封面、建草稿全自动，发布留给人",
-  "seed": 7
-}
