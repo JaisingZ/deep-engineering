@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""按 skills/human-voice/config/style-rules.md 检查一篇 Markdown。
+"""按 skills/human-writing-style/config/style-rules.md 检查一篇 Markdown。
 
 只使用 Python 标准库。退出码：0 通过，1 有违规，2 是用法或配置错误。
 
-    python3 skills/human-voice/scripts/lint.py path/to/article.md
-    python3 skills/human-voice/scripts/lint.py path/to/article.md --rules path/to/style-rules.md
-    python3 skills/human-voice/scripts/lint.py --self-test
+    python3 skills/human-writing-style/scripts/lint.py path/to/article.md
+    python3 skills/human-writing-style/scripts/lint.py path/to/article.md --rules path/to/style-rules.md
+    python3 skills/human-writing-style/scripts/lint.py --self-test
 """
 
 from __future__ import annotations
@@ -478,7 +478,7 @@ def format_report(report: Report) -> str:
     rules = report.rules
     chain = "有" if report.chain_hit else "无"
     lines = [
-        "活人感检查",
+        "真人写作风格检查",
         f"- 文件：{show_path(report.path)}",
         f"- 规则：{show_path(report.rules_path)}",
         "- 允许的口语：" + "、".join(rules.colloquial_allowed),
@@ -591,7 +591,7 @@ def self_test(rules: Rules) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="按活人感规则检查一篇 Markdown")
+    parser = argparse.ArgumentParser(description="按真人写作风格规则检查一篇 Markdown")
     parser.add_argument("markdown", nargs="?", help="要检查的 Markdown 文件")
     parser.add_argument("--rules", default=str(DEFAULT_RULES), help="style-rules.md 的路径")
     parser.add_argument("--self-test", action="store_true", help="用内置样例检查规则是否生效")
